@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class UpdateAdapter: RecyclerView.Adapter<UpdateAdapter.HeaderViewHolder>() {
+class UpdateAdapter: RecyclerView.Adapter<UpdateAdapter.UpdateViewHolder>() {
 
     var str: String = ""
     /* ViewHolder for displaying header. */
-    class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class UpdateViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val updateTextView: TextView = itemView.findViewById(R.id.updateView)
 
         fun bind(str:String) {
@@ -18,15 +18,15 @@ class UpdateAdapter: RecyclerView.Adapter<UpdateAdapter.HeaderViewHolder>() {
         }
     }
 
-    /* Inflates view and returns HeaderViewHolder. */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeaderViewHolder {
+    /* Inflates view and returns UpdateViewHolder. */
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UpdateViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.update_at, parent, false)
-        return HeaderViewHolder(view)
+        return UpdateViewHolder(view)
     }
 
-    /* Binds number of flowers to the header. */
-    override fun onBindViewHolder(holder: HeaderViewHolder, position: Int) {
+    /* Binds text to the header. */
+    override fun onBindViewHolder(holder: UpdateViewHolder, position: Int) {
         holder.bind(str)
     }
 
